@@ -15,6 +15,10 @@ void pop() {
 int peek() {
         return array[top];
 }
+void Clear() {
+    top = -1;
+}
+
 void print() {
     int i;
     for (i = 0; i <= top; i++)
@@ -29,6 +33,7 @@ int main() {
         printf("1-Push\n");
         printf("2-Pop\n");
         printf("3-Peek\n");
+        printf("4-Clear\n")
         printf("0-Exit\n");
         printf("**************************\n");
         printf("Your choice:\n");
@@ -47,6 +52,9 @@ int main() {
             case 3:
                 if (top == -1) printf("Stack is empty\n");
                 else printf("%d\n", peek());
+                break;
+            case 4:
+                Clear();
                 break;
             case 0:
                 printf("Good bye\n");
