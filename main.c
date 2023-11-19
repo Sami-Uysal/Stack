@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
 int array[5], top;
 void push(int x) {
     if (top +1 == 5)
@@ -18,9 +21,14 @@ int peek() {
 void Clear() {
     top = -1;
 }
+void ScreenClear() {
+    sleep(1);
+    system("cls");
+}
 
 void print() {
     int i;
+    printf("Stack: ");
     for (i = 0; i <= top; i++)
         printf("%d ", array[i]);
     printf("\n");
@@ -63,6 +71,7 @@ int main() {
                 printf("Wrong choice\n");
                 break;
         }
+        ScreenClear();
     }while (choice != 0);
     return 0;
 }
