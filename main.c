@@ -1,10 +1,10 @@
 #include <stdio.h>
-int dizi[5], top;
+int array[5], top;
 void push(int x) {
     if (top +1 == 5)
         printf("Stack is full\n");
     else
-        dizi[++top] = x;
+        array[++top] = x;
 }
 void pop() {
     if (top == -1)
@@ -13,12 +13,12 @@ void pop() {
         top--;
 }
 int peek() {
-        return dizi[top];
+        return array[top];
 }
 void print() {
     int i;
     for (i = 0; i <= top; i++)
-        printf("%d ", dizi[i]);
+        printf("%d ", array[i]);
     printf("\n");
 }
 int main() {
