@@ -1,0 +1,60 @@
+#include <stdio.h>
+int dizi[5], top;
+void push(int x) {
+    if (top +1 == 5)
+        printf("Stack is full\n");
+    else
+        dizi[++top] = x;
+}
+void pop() {
+    if (top == -1)
+        printf("Stack is empty\n");
+    else
+        top--;
+}
+int peek() {
+        return dizi[top];
+}
+void print() {
+    int i;
+    for (i = 0; i <= top; i++)
+        printf("%d ", dizi[i]);
+    printf("\n");
+}
+int main() {
+    int choice, x;
+    top = -1;
+    do{
+        printf("***********Menu***********\n");
+        printf("1-Push\n");
+        printf("2-Pop\n");
+        printf("3-Peek\n");
+        printf("0-Exit\n");
+        printf("**************************\n");
+        printf("Your choice:\n");
+        scanf("%d", &choice);
+        switch (choice) {
+            case 1:
+                printf("Enter a number:");
+                scanf("%d", &x);
+                push(x);
+                if (top != -1) print();
+                break;
+            case 2:
+                pop();
+                if (top != -1) print();
+                break;
+            case 3:
+                if (top == -1) printf("Stack is empty\n");
+                else printf("%d\n", peek());
+                break;
+            case 0:
+                printf("Good bye\n");
+                break;
+            default:
+                printf("Wrong choice\n");
+                break;
+        }
+    }while (choice != 0);
+    return 0;
+}
